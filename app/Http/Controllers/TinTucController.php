@@ -30,7 +30,6 @@ class TinTucController extends Controller
             'LoaiTin'=>'required',
             'TieuDe'=>'required|min:3|unique:TinTuc,TieuDe',
             'TomTat'=>'required',
-            'NoiDung'=>'required'
        ],
        [
             'LoaiTin.required'=>'Bạn chưa chọn loại tin',
@@ -38,7 +37,7 @@ class TinTucController extends Controller
             'TieuDe.min'=> 'Tiêu đề phải có ít nhất 3 ký tự',
             'TieuDe.unique'=>'Tiêu đề đã tồn tại',
             'TomTat.required'=>'Bạn chưa nhập tóm tăt',
-            'NoiDung.required'=>'Bạn chưa nhập nội dung'
+
        ]);
 
        $tintuc = new TinTuc;
@@ -46,7 +45,7 @@ class TinTucController extends Controller
        $tintuc->TieuDeKhongDau = changeTitle($request->TieuDe);
        $tintuc->idLoaiTin = $request->LoaiTin;
        $tintuc->TomTat = $request->TomTat;
-       $tintuc->NoiDung = $request->NoiDung;
+       $tintuc->NoiDung = $request->TomTat;
        $tintuc->SoLuotXem =  0;
 
        if($request->hasFile('Hinh')){
@@ -85,7 +84,6 @@ class TinTucController extends Controller
             'LoaiTin'=>'required',
             'TieuDe'=>'required|min:3|unique:TinTuc,TieuDe',
             'TomTat'=>'required',
-            'NoiDung'=>'required'
        ],
        [
             'LoaiTin.required'=>'Bạn chưa chọn loại tin',
@@ -93,14 +91,13 @@ class TinTucController extends Controller
             'TieuDe.min'=> 'Tiêu đề phải có ít nhất 3 ký tự',
             'TieuDe.unique'=>'Tiêu đề đã tồn tại',
             'TomTat.required'=>'Bạn chưa nhập tóm tăt',
-            'NoiDung.required'=>'Bạn chưa nhập nội dung'
        ]);
 
        $tintuc->TieuDe = $request->TieuDe;
        $tintuc->TieuDeKhongDau = changeTitle($request->TieuDe);
        $tintuc->idLoaiTin = $request->LoaiTin;
        $tintuc->TomTat = $request->TomTat;
-       $tintuc->NoiDung = $request->NoiDung;
+       $tintuc->NoiDung = $request->TomTat;
 
        if($request->hasFile('Hinh')){
            $file = $request->file('Hinh');

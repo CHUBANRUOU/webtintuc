@@ -22,31 +22,35 @@
                     </li>
                 </ul>
 
-                <form class="navbar-form navbar-left" role="search">
+                <form action="timkiem" method="POST" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
 			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="Search">
+			          <input type="text" name="tukhoa" class="form-control" placeholder="Tìm Kiếm">
 			        </div>
-			        <button type="submit" class="btn btn-default">Submit</button>
+			        <button type="submit" class="btn btn-default">Tìm</button>
 			    </form>
 
 			    <ul class="nav navbar-nav pull-right">
-                    <li>
-                        <a href="#">Đăng ký</a>
-                    </li>
-                    <li>
-                        <a href="#">Đăng nhập</a>
-                    </li>
-                    <li>
-                    	<a>
-                    		<span class ="glyphicon glyphicon-user"></span>
-                    		Chubanruou
-                    	</a>
-                    </li>
+                @auth()
+                        <li>
+                            <a href="nguoidung">
+                                <span class ="glyphicon glyphicon-user"></span>
+                                {{Auth::user()->name}}
+                            </a>
+                        </li>
 
-                    <li>
-                    	<a href="#">Đăng xuất</a>
-                    </li>
-                    
+                        <li>
+                            <a href="dangxuat">Đăng xuất</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="dangky">Đăng ký</a>
+                        </li>
+                        <li>
+                            <a href="dangnhap">Đăng nhập</a>
+                        </li>
+                        
+                    @endauth
                 </ul>
             </div>
 

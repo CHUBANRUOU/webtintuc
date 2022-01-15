@@ -9,12 +9,12 @@
             <div class="col-md-9 ">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color:#337AB7; color:white;">
-                        <h4><b>{{$loaitin->Ten}}</b></h4>
+                        <h4><b>Tìm Kiếm: {{$tukhoa}}</b></h4>
                     </div>
 
                     @foreach($tintuc as $tt)
                     <div class="row-item row">
-                            <div class="col-md-3">
+                        <div class="col-md-3">
                                         <a href="detail.html">                               
                                             <img width="200px" height="200px" class="img-responsive" src="upload/tintuc/{{$tt->Hinh}}" alt="">    
                                         </a>           

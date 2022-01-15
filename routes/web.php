@@ -107,3 +107,15 @@ Route::get('trangchu','App\Http\Controllers\PagesController@trangchu');
 Route::get('lienhe','App\Http\Controllers\PagesController@lienhe');
 Route::get('loaitin/{id}/{TenKhongDau}.html','App\Http\Controllers\PagesController@loaitin');
 Route::get(' tintuc/{id}/{TenKhongDau}.html','App\Http\Controllers\PagesController@tintuc');
+
+Route::get('dangnhap','App\Http\Controllers\PagesController@getDangnhap');
+Route::post('dangnhap','App\Http\Controllers\PagesController@postDangnhap');
+Route::get('dangxuat','App\Http\Controllers\PagesController@getDangxuat');
+Route::get('nguoidung','App\Http\Controllers\PagesController@getNguoidung');
+Route::post('nguoidung','App\Http\Controllers\PagesController@postNguoidung');
+Route::get('dangky','App\Http\Controllers\PagesController@getDangky');
+Route::post('dangky','App\Http\Controllers\PagesController@postDangKy');
+
+Route::post('comment/{id}','App\Http\Controllers\CommentController@postComment');
+
+Route::post('timkiem','App\Http\Controllers\PagesController@timkiem');

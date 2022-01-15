@@ -34,16 +34,22 @@
                 <!-- Blog Comments -->
 
                 <!-- Comments Form -->
+
+                @auth
                 <div class="well">
+                    @if(session('thongbao'))
+                        {{session('thongbao')}}
+                    @endif
                     <h4>Viết bình luận ...<span class="glyphicon glyphicon-pencil"></span></h4>
-                    <form role="form">
+                    <form action="comment/{{$tintuc->id}}" role="form" method="POST">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}" >
                         <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" name="noidung" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Gửi</button>
                     </form>
                 </div>
-
+                @endauth
                 <hr>
 
                 <!-- Posted Comments -->

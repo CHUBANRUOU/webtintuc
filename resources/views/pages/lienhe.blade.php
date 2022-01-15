@@ -23,7 +23,7 @@
                 
                 <div class="break"></div>
                    <h4><span class= "glyphicon glyphicon-home "></span> Địa chỉ : </h4>
-                <p>70 Võ Nguyên Giáp, thị trấn Trà My, huyện Bắc Trà My, Quảng Nam </p>
+                <p>48 Cao Thắng, Thanh Bình, Hải Châu, Đà Nẵng </p>
 
                 <h4><span class="glyphicon glyphicon-envelope"></span> Email : </h4>
                 <p>duyanhbtm@gmail.com </p>
